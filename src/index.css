@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html[dir="rtl"] {
+    font-family: 'Noto Naskh Arabic', sans-serif;
+  }
+
+  body {
+    @apply antialiased bg-white text-navy-900 font-sans;
+  }
+
+  html[dir="rtl"] body {
+    @apply font-arabic;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  html[dir="rtl"] h1,
+  html[dir="rtl"] h2,
+  html[dir="rtl"] h3,
+  html[dir="rtl"] h4,
+  html[dir="rtl"] h5,
+  html[dir="rtl"] h6 {
+    @apply font-arabic;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-navy-800 text-white hover:bg-navy-900 focus:ring-navy-500;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-navy-800 border-navy-800 hover:bg-navy-50 focus:ring-navy-500;
+  }
+
+  html[dir="rtl"] .btn svg {
+    @apply rotate-180;
+  }
+}
